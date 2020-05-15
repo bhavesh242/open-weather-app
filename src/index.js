@@ -1,15 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import WeatherApp from './WeatherApp'
 
-
-class WeatherApp extends React.Component
-{
-  render(){
-    return (
-      <p>Hello</p>
-    )
-  }
-}
 
 ReactDOM.render(
   <WeatherApp />,
