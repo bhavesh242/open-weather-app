@@ -1,5 +1,5 @@
 import React from 'react';
- 
+import './index.css'
 
 
 class InputSearch extends React.Component{
@@ -24,10 +24,10 @@ class InputSearch extends React.Component{
     }
     render(){
         return(
-            <div>
-                <form onSubmit={this.fetchWeather} >
-                    <input id = "city" onChange={this.changeHandler} type="text" />
-                    <input type="submit" value="submit" />
+            <div class="search-body">
+                <form onSubmit={this.fetchWeather} class="find-location">
+                    <input id = "city" placeholder="Enter Location" onChange={this.changeHandler} type="text" />
+                    <input id="submit" type="submit"  value="submit" />
                 </form>
             </div>
         )   

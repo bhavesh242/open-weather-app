@@ -7,7 +7,7 @@ class ForeCast extends React.Component{
 
         return(
             <div>
-                <h2>Forecast for Remainig Four Days</h2>
+                <h2 className="display-2 jumbotron" style={{textAlign:"center"  }}>Forecast for Remaining Four Days</h2>
             </div>
         )
     }
