@@ -7,10 +7,19 @@ class InputSearch extends React.Component{
     state = {
         city:"",
         data:[],
+        bvisible: false
     }
 
     changeHandler = e =>{
-        this.setState({city : e.target.value });
+        
+        let vis = false;
+        if(! (e.target.value === "" || e.target.value === null || e.target.value === undefined))
+        {
+            vis = true;
+        }
+        this.setState({city : e.target.value, bvisible:vis });
+        
+        
     }
     
     fetchWeather = e => {
@@ -28,7 +37,9 @@ class InputSearch extends React.Component{
             <div class="search-body">
                 <form onSubmit={this.fetchWeather} class="find-location">
                     <input id = "city" placeholder="Enter Location" onChange={this.changeHandler} type="text" />
-                    <input id="submit" type="submit"  value="submit" />
+                    {this.state.bvisible?
+                    <input id="submit" type="submit"  value="Search" style={{background:this.state.color}} />
+                    :""}
                 </form>
             </div>
         )   
