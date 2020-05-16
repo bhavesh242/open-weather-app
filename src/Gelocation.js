@@ -16,7 +16,7 @@ class Geolocation extends React.Component{
             this.setState({lat: position.coords.latitude, long: position.coords.longitude});
           });
           this.setState({loading:true});
-          fetch('https://api.openweathermap.org/data/2.5/forecast?lat='+this.state.lat+'&lon='+this.state.long+'&exclude=hourly,daily&appid=69c4928e7eaf7c363ff44bf422b8b7e4')
+          fetch('https://api.openweathermap.org/data/2.5/forecast?lat='+this.state.lat+'&lon='+this.state.long+'&appid=69c4928e7eaf7c363ff44bf422b8b7e4')
           .then(data=> data.json())
           .then(data=> this.setState({data: data, loading: false})).then(data=> this.props.getData(this.state.data));  
         }
