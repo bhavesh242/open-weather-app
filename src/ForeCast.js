@@ -40,7 +40,7 @@ const CardForecast = ({ indexNo, forecast }) => {
                 <p className="text-muted">{moment(newDate).format('MMMM Do, h:mm a')}</p>
                 <i className={"owf owf-" + forecast.icon[indexNo] + " owf-5x"}  ></i>
                 <p className="text-muted">{forecast.description[indexNo]}</p>
-                <h2>{forecast.temp[indexNo]} °F</h2>
+                <h2>{forecast.temp[indexNo]} °C</h2>
                 <div className="card-body">
                     <p className="card-text">{forecast.weather[indexNo]}</p>
                 </div>
