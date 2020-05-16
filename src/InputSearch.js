@@ -3,7 +3,7 @@ import React from 'react';
 
 
 class InputSearch extends React.Component{
-
+    
     state = {
         city:"",
         data:[],
@@ -14,8 +14,13 @@ class InputSearch extends React.Component{
     }
     fetchWeather = e => {
         e.preventDefault();
-        fetch()
-        
+        if(! (this.state.city === "" || this.state.city === null || this.state.city === undefined))
+        {
+            fetch('http://api.openweathermap.org/data/2.5/forecast?q='+ this.state.city+'&appid=69c4928e7eaf7c363ff44bf422b8b7e4')
+            .then(data => data.json())
+            .then(data => this.setState({data:data}))
+            .then(data => this.props.getData(this.state.data))
+        }
     }
     render(){
         return(
