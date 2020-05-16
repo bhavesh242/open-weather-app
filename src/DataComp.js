@@ -17,6 +17,7 @@ class DataComp extends React.Component {
       temp: [],
       feels_like: [],
       weather: [],
+      icon:[],
       datetime: [],
       description: [],
     }
@@ -25,13 +26,14 @@ class DataComp extends React.Component {
         infArray.temp.push(t.main.temp);
         infArray.feels_like.push(t.main.feels_like);
         infArray.weather.push(t.weather[0].main);
+        infArray.icon.push(t.weather[0].id)
         infArray.description.push(t.weather[0].description);
         infArray.datetime.push(t.dt);
         return infArray;
       }
     )  
     this.setState({ data: data, dailyData: infArray });
-    console.log(this.state);
+    this.props.fillStates(this.state.dailyData)
 
   }
 

@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-class TodayWeather extends React.Component{
+class TodayWeather extends React.Component {
 
-    render(){
-
-        return(
+    render() {
+        
+        return (
             <div>
                 <h2>Today's Weather</h2>
             </div>
