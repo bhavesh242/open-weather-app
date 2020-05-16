@@ -24,8 +24,6 @@ class Geolocation extends React.Component{
             
         return (
           <div>
-            <h3>{this.state.lat? <p>Latitiude: {this.state.lat}</p>:""}</h3>
-            <h3>{this.state.long? <p>Longitude: {this.state.long}</p>:""}</h3>
           </div>
         )
       }

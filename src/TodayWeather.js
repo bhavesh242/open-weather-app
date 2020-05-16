@@ -7,7 +7,7 @@ class TodayWeather extends React.Component {
         
         return (
             <div>
-                <h2>Today's Weather</h2>
+                <h2 className="display-1 jumbotron">Today's Weather</h2>
             </div>
         )
     }
