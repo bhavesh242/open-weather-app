@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-class ForeCast extends React.Component{
+class ForeCast extends React.Component {
 
-    render(){
+    render() {
 
-        return(
+        return (
             <div>
                 <h2>Forecast for Remainig Four Days</h2>
             </div>
