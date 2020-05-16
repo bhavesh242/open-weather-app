@@ -11,8 +11,6 @@ class Geolocation extends React.Component{
         if ("geolocation" in navigator){
           console.log("Available");
           navigator.geolocation.getCurrentPosition((position)=>{
-            console.log("Latitiude:",position.coords.latitude);
-            console.log("Longitude:",position.coords.longitude);
             this.setState({lat: position.coords.latitude, long: position.coords.longitude});
           });
           this.setState({loading:true});
