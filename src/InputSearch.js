@@ -12,6 +12,7 @@ class InputSearch extends React.Component{
     changeHandler = e =>{
         this.setState({city : e.target.value });
     }
+    
     fetchWeather = e => {
         e.preventDefault();
         if(! (this.state.city === "" || this.state.city === null || this.state.city === undefined))
