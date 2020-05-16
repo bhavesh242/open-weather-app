@@ -3,11 +3,17 @@ import React from 'react';
 import Geolocation from './Gelocation';
 class DataComp extends React.Component
 {
+  state = {data:[]}
+
+  parentCallBackFunct = (data) =>{
+    this.setState({data});
+  }
+
   render(){
     return (
       <div>
-        <InputSearch />
-        <Geolocation />
+        <InputSearch getData={this.parentCallBackFunct}/>
+        <Geolocation getData={this.parentCallBackFunct}/>
       </div>
 
     )
