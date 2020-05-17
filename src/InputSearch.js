@@ -23,6 +23,7 @@ class InputSearch extends React.Component{
     }
     
     fetchWeather = e => {
+        this.props.togglerFunct();
         e.preventDefault();
         if(! (this.state.city === "" || this.state.city === null || this.state.city === undefined))
         {

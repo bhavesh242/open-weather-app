@@ -47,8 +47,16 @@ class DataComp extends React.Component {
 
   handleChange = (checked) => {
     this.setState({ checked });
+    if(checked ===false)
+    {
+      this.props.changeLoaded();
+    }
   }
 
+  togglerFunct =()=>{
+    this.setState({checked:false});
+  }
+  
   render() {
     return (
     <div>
@@ -60,14 +68,14 @@ class DataComp extends React.Component {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <label style={{marginTop:"8px"}}>
-            <Switch onChange={this.handleChange} checked={this.state.checked} className="react-switch"  />
+            <Switch  onChange={this.handleChange} checked={this.state.checked} className="react-switch"  />
           </label>
-          <p class="nav-link">Your Location</p>
+          <p class="nav-link" >Your Location</p>
           <span class="nav-title"> Weather Application</span>
           </Nav>
           
           <Form inline>
-            <InputSearch getData={this.parentCallBackFunct} />
+            <InputSearch getData={this.parentCallBackFunct} togglerFunct ={this.togglerFunct} />
           </Form>
         </Navbar.Collapse>
       </Navbar>
