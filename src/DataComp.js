@@ -2,6 +2,8 @@ import InputSearch from './InputSearch';
 import React from 'react';
 import Geolocation from './Gelocation';
 import Switch from 'react-switch';
+import {Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
+
 class DataComp extends React.Component {
   state = {
     checked: false,
@@ -48,16 +50,32 @@ class DataComp extends React.Component {
 
   render() {
     return (
+    <div>
+      <Navbar bg="dark" variant="dark" expand="lg" style={{padding:"10"}}>
+        <Navbar.Brand href="#home">
+          <img src="https://lh3.googleusercontent.com/napgxTBO7Efx-5NrdG_Mrfh6tISWc7Q1V6mXhQl-yDMOCPQIeioaTnUG5-zAjnFP-_o=w300" style={{width:40, marginTop: -7}} />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <label>
+            <span style={{paddingBottom:"10px",color:"white"}}></span>
+            <Switch onChange={this.handleChange} checked={this.state.checked} className="react-switch"  />
+          </label>
+          </Nav>
+          
+          <Form inline>
+            <InputSearch getData={this.parentCallBackFunct} />
+          </Form>
+        </Navbar.Collapse>
+      </Navbar>
       <div>
 
-        <label>
-          <span>Get Weather for Current Location</span>
-          <Switch onChange={this.handleChange} checked={this.state.checked} className="react-switch" />
-        </label>
         {this.state.checked === false ?
-          <InputSearch getData={this.parentCallBackFunct} /> :
+          "":
           <Geolocation getData={this.parentCallBackFunct} />}
       </div>
+    </div>
 
     )
   }
