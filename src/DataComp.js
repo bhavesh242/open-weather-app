@@ -59,10 +59,10 @@ class DataComp extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <label>
-            <span style={{paddingBottom:"10px",color:"white"}}></span>
+            <label style={{marginTop:"8px"}}>
             <Switch onChange={this.handleChange} checked={this.state.checked} className="react-switch"  />
           </label>
+          <p class="nav-link">Your Location</p>
           <span class="nav-title"> Weather Application</span>
           </Nav>
           
