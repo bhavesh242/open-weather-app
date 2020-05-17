@@ -5,8 +5,8 @@ import Switch from 'react-switch';
 class DataComp extends React.Component {
   state = {
     checked: false,
-    data: [],
     dailyData: {},
+    city:[]
   }
 
   parentCallBackFunct = (data) => {
@@ -18,6 +18,7 @@ class DataComp extends React.Component {
     const dailyData = data.list.filter(reading => {
       return reading.dt_txt.includes("18:00:00")
     })
+    let city = data.city;
     const infArray = {
       temp: [],
       feels_like: [],
@@ -37,8 +38,8 @@ class DataComp extends React.Component {
         return infArray;
       }
     )  
-    this.setState({ data: data, dailyData: infArray });
-    this.props.fillStates(this.state.dailyData)
+    this.setState({ city: city, dailyData: infArray });
+    this.props.fillStates(this.state.dailyData, this.state.city)
 
   }
 

@@ -4,13 +4,13 @@ var moment = require('moment');
 class TodayWeather extends React.Component {
     
     render() {
-        
+        var cityName = this.props.city.name ==='Globe'? "Current Location" : this.props.city.name +", "+this.props.city.country;
         return (
             <div>
                 {this.props.today.weather === 'Clear'?
-                <WeatherClear today={this.props.today} />
+                <WeatherClear today={this.props.today} cityName={cityName} />
                 : 
-                <WeatherOther today = {this.props.today} />}
+                <WeatherOther today = {this.props.today} cityName={cityName} />}
             </div>    
             )
         }
@@ -31,6 +31,7 @@ class WeatherOther extends React.Component{
             <div class="row">
                 <div class="col-md-12 col-md-offset-12">
                     <div className={"jumbotron weather " + weather_map[this.props.today.weather]}>
+                        <h2 class="current-location"> {this.props.cityName}</h2>
                         <h2 class="current-temp"> {this.props.today.temp}°C</h2>
                         <h3 className="card-title current-day">{moment(newDate).format('dddd')}, <span className="current-date">{moment(newDate).format('MMMM Do, h:mm a')}</span></h3>            
                         <p className="current-desc">{this.props.today.description}</p>
@@ -56,7 +57,8 @@ class WeatherClear extends React.Component{
                         
                         <div class="cloud cloudOne"></div>
                         <div class="sun"></div>
-                        <h2 class="current-temp"> {this.props.today.temp}°F</h2>
+                        <h2 class="current-location"> {this.props.cityName}</h2>
+                        <h2 class="current-temp"> {this.props.today.temp}°C</h2>
                         <h3 className="card-title current-day">{moment(newDate).format('dddd')}, <span className="text-muted current-date">{moment(newDate).format('MMMM Do, h:mm a')}</span></h3>            
                         <p className="text-muted current-desc">{this.props.today.description}</p>
                     </div>  

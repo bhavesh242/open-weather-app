@@ -7,9 +7,10 @@ class WeatherApp extends React.Component {
     todayWeather: [],
     forecast: [],
     loaded:false,
+    city:[]
   }
 
-  parentCallBack = (dailyData) => {
+  parentCallBack = (dailyData, city) => {
 
     const today = {
       temp: dailyData.temp[0],
@@ -39,7 +40,7 @@ class WeatherApp extends React.Component {
     }
 
 
-    this.setState({ todayWeather: today, forecast: forecast, loaded: true});
+    this.setState({ todayWeather: today, forecast: forecast, loaded: true, city:city});
 
   }
 
@@ -48,7 +49,7 @@ class WeatherApp extends React.Component {
       <div>
         <DataComp fillStates={this.parentCallBack} />
         {this.state.loaded?<div>
-        <TodayWeather today={this.state.todayWeather} />
+        <TodayWeather today={this.state.todayWeather} city={this.state.city} />
         <ForeCast forecast={this.state.forecast} /></div>
         :""}
       </div>
