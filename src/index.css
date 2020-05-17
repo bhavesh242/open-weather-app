@@ -27,7 +27,7 @@ code {
   position: static; }
 
   .find-location input[type="text"] {
-    color: white; 
+    color: black; 
     font-size: 15px;  
   }
   .find-location input[type="submit"] {

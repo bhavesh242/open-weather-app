@@ -36,9 +36,9 @@ const CardForecast = ({ indexNo, forecast }) => {
         <div class="col-sm-3">
             <div className="card">
                  <h3 className="card-title">{moment(newDate).format('dddd')}</h3>
-                <p className="text-muted">{moment(newDate).format('MMMM Do, h:mm a')}</p>
+                <p>{moment(newDate).format('MMMM Do, h:mm a')}</p>
                 <i className={"owf owf-" + forecast.icon[indexNo] + " owf-5x"}  ></i>
-                <p className="text-muted">{forecast.description[indexNo]}</p>
+                <p >{forecast.description[indexNo]}</p>
                 <h2>{forecast.temp[indexNo]} °C</h2>
                 <div className="card-body">
                     <p className="card-text">{forecast.weather[indexNo]}</p>

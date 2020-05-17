@@ -59,8 +59,8 @@ class WeatherClear extends React.Component{
                         <div class="sun"></div>
                         <h2 class="current-location"> {this.props.cityName}</h2>
                         <h2 class="current-temp"> {this.props.today.temp}°C</h2>
-                        <h3 className="card-title current-day">{moment(newDate).format('dddd')}, <span className="text-muted current-date">{moment(newDate).format('MMMM Do, h:mm a')}</span></h3>            
-                        <p className="text-muted current-desc">{this.props.today.description}</p>
+                        <h3 className="card-title current-day">{moment(newDate).format('dddd')}, <span className=" current-date">{moment(newDate).format('MMMM Do, h:mm a')}</span></h3>            
+                        <p className=" current-desc">{this.props.today.description}</p>
                     </div>  
                 </div>  
             </div>
