@@ -19,12 +19,7 @@ class TodayWeather extends React.Component {
             <div class="col-md-12 col-md-offset-12">
             <div className={"jumbotron weather " + weather_map[this.props.today.weather]}>
             <h2 class="current-temp"> {this.props.today.temp}°F</h2>
-            <h3 className="card-title current-day">{moment(newDate).format('dddd')}, <span className="text-muted current-date">{moment(newDate).format('MMMM Do, h:mm a')}</span></h3>
-            <i className={"owf owf-"+this.props.today.icon+" owf-5x current-icon"}  ></i>
-            <div className="card-body current-weather">
-                <p className="card-text">{this.props.today.weather}</p>
-            </div>                
-            
+            <h3 className="card-title current-day">{moment(newDate).format('dddd')}, <span className="text-muted current-date">{moment(newDate).format('MMMM Do, h:mm a')}</span></h3>            
             <p className="text-muted current-desc">{this.props.today.description}</p>
 
             </div>  
