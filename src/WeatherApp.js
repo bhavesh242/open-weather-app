@@ -2,6 +2,7 @@ import React from 'react';
 import DataComp from './DataComp'
 import TodayWeather from './TodayWeather'
 import ForeCast from './ForeCast'
+import App from './App'
 class WeatherApp extends React.Component {
   state = {
     todayWeather: [],
@@ -51,7 +52,7 @@ class WeatherApp extends React.Component {
         {this.state.loaded?<div>
         <TodayWeather today={this.state.todayWeather} city={this.state.city} />
         <ForeCast forecast={this.state.forecast} /></div>
-        :""}
+        :<App/>}
       </div>
 
     )
