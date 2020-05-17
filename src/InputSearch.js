@@ -27,7 +27,7 @@ class InputSearch extends React.Component{
         e.preventDefault();
         if(! (this.state.city === "" || this.state.city === null || this.state.city === undefined))
         {
-            fetch('http://api.openweathermap.org/data/2.5/forecast?q='+ this.state.city+'&units=metric&appid=69c4928e7eaf7c363ff44bf422b8b7e4')
+            fetch('https://api.openweathermap.org/data/2.5/forecast?q='+ this.state.city+'&units=metric&appid=69c4928e7eaf7c363ff44bf422b8b7e4')
             .then(data => data.json())
             .then(data => this.setState({data:data}))
             .then(data => this.props.getData(this.state.data))
