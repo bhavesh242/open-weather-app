@@ -36,10 +36,10 @@ class InputSearch extends React.Component{
         return(
             <div class="search-body">
                 <form onSubmit={this.fetchWeather} class="find-location">
-                    <input id = "city" placeholder="Enter Location" onChange={this.changeHandler} type="text" />
                     {this.state.bvisible?
                     <input id="submit" type="submit"  value="Search" style={{background:this.state.color}} />
                     :""}
+                    <input id = "city" placeholder="Enter Location" onChange={this.changeHandler} type="text" />
                 </form>
             </div>
         )   
