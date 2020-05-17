@@ -13,7 +13,6 @@ class ForeCast extends React.Component {
                 {this.state.loaded ? [0, 1, 2, 3].map(
                     (i) => {
 
-                        console.log(this.props)
                         return (
                             <CardForecast indexNo={i} forecast={this.props.forecast} />
                         )
@@ -34,7 +33,7 @@ const CardForecast = ({ indexNo, forecast }) => {
   newDate.setTime(weekday)
     
     return (
-        <div class="col-md-3">
+        <div class="col-sm-3">
             <div className="card">
                  <h3 className="card-title">{moment(newDate).format('dddd')}</h3>
                 <p className="text-muted">{moment(newDate).format('MMMM Do, h:mm a')}</p>

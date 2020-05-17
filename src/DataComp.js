@@ -10,6 +10,11 @@ class DataComp extends React.Component {
   }
 
   parentCallBackFunct = (data) => {
+    if(data.cod ==="404")
+    {
+      alert("No weather forecast found!");
+      return;
+    }
     const dailyData = data.list.filter(reading => {
       return reading.dt_txt.includes("18:00:00")
     })
