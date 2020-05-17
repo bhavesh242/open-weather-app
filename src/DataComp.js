@@ -63,6 +63,7 @@ class DataComp extends React.Component {
             <span style={{paddingBottom:"10px",color:"white"}}></span>
             <Switch onChange={this.handleChange} checked={this.state.checked} className="react-switch"  />
           </label>
+          <span class="nav-title"> Weather Application</span>
           </Nav>
           
           <Form inline>

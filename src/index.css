@@ -21,7 +21,7 @@ code {
 }
 
 #submit{
-  margin: 10px;
+  margin-right: 10px;
 }
 .find-location {
   position: static; }
@@ -96,3 +96,10 @@ code {
   border-width: 0.5px;
 }
 
+.nav-title{
+  color:white;
+  margin-left: 500px;
+  margin-top: 5px;
+  font-family:"Arial, Helvetica, sans-serif";
+  font-size: 1.5em;
+}
