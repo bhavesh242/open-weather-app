@@ -7,9 +7,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <code>Please select an input method</code>
-        </p>
+        <h3>
+          <code style={{color:"black"}}>Please select an input method</code>
+        </h3>
         <a
           className="App-link"
           href="https://reactjs.org"
