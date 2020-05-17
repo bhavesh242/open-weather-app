@@ -9,7 +9,9 @@ class ForeCast extends React.Component {
     }
     render() {
         return (
-            <div class="row" style={{ textAlign: "center",paddingTop: "20px" }}>
+            <div  style={{ textAlign: "center"}}>
+             <h2 style = {{marginTop:"20px"}}>Forecast For Next 4 Days</h2>
+            <div class="row" style={{ textAlign: "center"}}>
                 {this.state.loaded ? [0, 1, 2, 3].map(
                     (i) => {
 
@@ -20,6 +22,7 @@ class ForeCast extends React.Component {
                 )
                     : ""
                 }
+            </div>
             </div>
 
         )
