@@ -2,18 +2,18 @@ import InputSearch from './InputSearch';
 import React from 'react';
 import Geolocation from './Gelocation';
 import Switch from 'react-switch';
-import {Navbar,Nav,Form} from 'react-bootstrap';
+import { Navbar, Nav, Form } from 'react-bootstrap';
+import Clock from './Clock';
 
 class DataComp extends React.Component {
   state = {
     checked: false,
     dailyData: {},
-    city:[]
+    city: []
   }
 
   parentCallBackFunct = (data) => {
-    if(data.cod ==="404")
-    {
+    if (data.cod === "404") {
       alert("No weather forecast found!");
       return;
     }
@@ -25,7 +25,7 @@ class DataComp extends React.Component {
       temp: [],
       feels_like: [],
       weather: [],
-      icon:[],
+      icon: [],
       datetime: [],
       description: [],
     }
@@ -39,7 +39,7 @@ class DataComp extends React.Component {
         infArray.datetime.push(t.dt);
         return infArray;
       }
-    )  
+    )
     this.setState({ city: city, dailyData: infArray });
     this.props.fillStates(this.state.dailyData, this.state.city)
 
@@ -47,45 +47,47 @@ class DataComp extends React.Component {
 
   handleChange = (checked) => {
     this.setState({ checked });
-    if(checked ===false)
-    {
+    if (checked === false) {
       this.props.changeLoaded();
     }
   }
 
-  togglerFunct =()=>{
-    this.setState({checked:false});
+  togglerFunct = () => {
+    this.setState({ checked: false });
   }
-  
+
   render() {
     return (
-    <div>
-      <Navbar bg="dark" variant="dark" expand="lg" style={{padding:"10"}}>
-        <Navbar.Brand href="#home">
-          <img alt="logo" src="https://lh3.googleusercontent.com/napgxTBO7Efx-5NrdG_Mrfh6tISWc7Q1V6mXhQl-yDMOCPQIeioaTnUG5-zAjnFP-_o=w300" style={{width:40, marginTop: -7}} />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <label style={{marginTop:"8px"}}>
-            <Switch  onChange={this.handleChange} checked={this.state.checked} className="react-switch"  />
-          </label>
-          <p class="nav-link" >Your Location</p>
-          <span class="nav-title"> Weather Application</span>
-          </Nav>
-          
-          <Form inline>
-            <InputSearch getData={this.parentCallBackFunct} togglerFunct ={this.togglerFunct} />
-          </Form>
-        </Navbar.Collapse>
-      </Navbar>
       <div>
+        <Navbar bg="dark" variant="dark" expand="lg" style={{ padding: "10" }}>
+          <Navbar.Brand href="#home">
+            <img alt="logo" src="https://lh3.googleusercontent.com/napgxTBO7Efx-5NrdG_Mrfh6tISWc7Q1V6mXhQl-yDMOCPQIeioaTnUG5-zAjnFP-_o=w300" style={{ width: 40, marginTop: -7 }} />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <label style={{ marginTop: "8px" }}>
+                <Switch onChange={this.handleChange} checked={this.state.checked} className="react-switch" />
+              </label>
+              <p class="nav-link" >Your Location</p>
+              <span class="nav-title" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}> Weather Application</span>
+              <div class="nav-link" style={{ color: "#f2f7f7", position: "relative", left: "75px" }}>
+                <Clock />
+              </div>
+            </Nav>
 
-        {this.state.checked === false ?
-          "":
-          <Geolocation getData={this.parentCallBackFunct} />}
+            <Form inline>
+              <InputSearch getData={this.parentCallBackFunct} togglerFunct={this.togglerFunct} />
+            </Form>
+          </Navbar.Collapse>
+        </Navbar>
+        <div>
+
+          {this.state.checked === false ?
+            "" :
+            <Geolocation getData={this.parentCallBackFunct} />}
+        </div>
       </div>
-    </div>
 
     )
   }
